@@ -1,0 +1,440 @@
+/****GENERAL STYLING*****/
+
+/*Affects entire document*/
+html {
+    scroll-behavior: smooth;
+}
+/*BODY*/
+body{
+    margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+body.fade-out {
+    opacity: 1;
+}
+
+/*HEADING 1 ELEMENTS*/
+h1{
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3%;
+    color: #1a1a1a;
+}
+
+/*HEADING 1 ELEMENT HOVER EFFECT*/
+h1:hover{
+    filter: grayscale(5%); /*This adds a slightly gray filter to the h1 headings when hovered*/
+    transform: scale(1.1); /*When hovered it will increase in size by 1.1 */
+    transition: transform 1s; /*This causes the transformation to last 1 second */
+}
+
+/*STYLING FOR PORTFOLIO TITLE TEXT*/
+.white text{
+    color: #fff;
+    padding-top: 10vh;
+}
+
+/*PARAGRAPH ELEMENTS*/
+p{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+/*PARAGRAPH ELEMENT HOVER EFFECT*/
+p:hover{
+    transition: transform 1s;
+        transform: scale(1.01);
+}
+
+/*CENTER CLASS- APPLIES TO ALL ELEMENTS WITH THE CLASS "CENTER"*/
+.center{
+    text-align: center;
+}
+
+/*CENTER CLASS HOVER EFFECT- AFFECTS QUOTE GITHUB LINK AND FOOTER*/
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+/*ANCHOR ELEMENTS*/
+a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*QUOTATION ELEMENTS*/
+q {
+    font-style: italic;
+}
+
+/*IMAGE ELEMENTS*/
+img {
+    filter: grayscale(75%); /*RIDS PICTURE OF 75% OF THEIR COLOR*/
+    border-radius: 8px; /*GIVES ALL IMAGES SLIGHT ROUNDED CORNERS*/
+    max-width: 100%; /*ENSURES ALL IMAGES STAY WITHIN THEIR CONTAINER*/
+    height: 340px; /*SETS HEIGHT OF ALL IMAGES*/
+    display: block; /*BY SPECIFYING BLOCK DISPLAY IT ENSURES IMAGES ARE ABLE TO BE CENTERED*/
+    margin: auto auto auto auto;
+}
+
+/*IMAGE ELEMENT HOVER EFFECTS*/
+img:hover {
+    filter: grayscale(5%); /*BRINGS BACK MOST OF IMAGE'S COLOR WHEN HOVERED OVER*/
+}
+
+/*THE @MEDIA RULE IS USED IN MEDIA QUERIES TO APPLY DIFFERENT STYLES FOR DIFFERENT MEDIA/TYPES OF DEVICES*/
+/*ON SCREENS 576PX AND SMALLER THE IMAGES WILL BE 100PX TALL AND CENTERED VERTICALLY IN THE COLUMN*/
+@media screen and (max-width: 576px) {
+    img{
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/*STYLING FOR FOOTER ELEMENT*/
+footer{
+    padding: 2%; /*THIS GIVES FOOTER PADDING THAT IS EQUAL TO 2% OF THE WIDTH OF THE ELEMENT'S AREA*/
+    background-color: white;
+}
+/*END OF GENERAL STYLING*/
+
+/*NAVBAR STYLING*/
+.navbar{
+    overflow: hidden; /*ENSURES ANY CONTENT THAT OVERFLOWS BEYOND BOUNDARY OF NAV BAR IS NOT DISPLAYED*/
+    background-color: black;
+    position: fixed;
+    top: 0; /*ENSURES NO SPACE IS DISPLAYED ABOVE THE NAVBAR*/
+    width: 100%;
+    z-index: 1; /*ENSURES OTHER ELEMENTS DON'T DISPLAY OVER THE NAVBAR*/
+    -webkit-animation: moveNav 5s; /*THIS APPLIES THE MOVENAV ANIMATION BELOW FOR SAFARI 4.0-8.0*/
+    animation: moveNav 5s;
+}
+
+@keyframes moveNav {
+    from {left: -100vw;}
+    to { left: 0vw;}
+}
+
+/*NAVBAR LINKS*/
+.navbar a{
+    float: left;
+    display: block;
+    color: whitesmoke;
+    padding: .75vw 1vw;
+    text-decoration: none; /*GETS RID OF THE UNDERLINE*/
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+    text-align: center;
+    position: relative; /*SETS TEXT RELATIVE TO ITS NORMAL POSITIONING ALLOWING TO USE ANIMAITON BELOW*/
+    -webkit-animation: moveNavText 5.75s; /*Animaiton for Safari 4.9-8.0*/
+    animation: moveNavText 5.75s;
+}
+
+/* MOVENAVTEXT ANIMATION EFFECT FOR MOVING THE NAVBAR TEXT FROM ABOVE THE VIEW TO NAVBAR*/
+@keyframes moveNavText{
+    from {top: -100vw;} /*THIS SETS NAVBAR TEXT 100% ABOVE THE VIEWPORT*/
+    to {top: 0vw;} /*THIS LOWERS THE NAVBAR TEXT ONTO THE NAVBAR*/
+}
+
+/*SCREENS 576PX AND SMALLER WILL DISPLAY NAVBAR LINKS EQUALLY DISTIRBUTED*/
+@media screen and (max-width: 576px) {
+    .navbar a{
+        width: 20%; /*MAKES EACH LINK TAKE UP 1/4TH OF NAVBAR*/
+        font-size: 12px;
+    }
+}
+
+/*NAVBAR HOVER EFFECTS*/
+.navbar a:hover{
+    background-color: darkslategray;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*NAVBAR HOME BUTTON*/
+.navbar a.active{ /*TARGETS THE A ELEMENT ON THE NAVBAR WITH THE ACTIVE CLASS*/
+    background-color: darkgray;
+}
+/*END OF NAVBAR STYLING*/
+
+/*VIDEO STYLING*/
+/*FORMATTING FOR A BACKGROUND VIDEO*/
+#coding_video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1; /*PLACES VIDEO BEHIND THE OTHER ELEMENTS ON THE PAGE*/
+}
+
+/*SCREENS EQUAL OR LESS THAN 576 PX WILL NOT DISPLAY BACKGROUND VIDEO*/
+@media screen and (max-width: 576px) {
+    #coding_video{
+        display: none;
+    }
+}
+
+/*TEXTS OVER THE VIDEO*/
+.video_text{
+    background: rgba(0, 0, 0, 0.5); /*PROVIDES SEMI-TRANSPARENT BACKGROUND FOR TEXT TO SIT OVER*/
+    color: white;
+    width: 100%; /*ENSURES VIDEO-TEXT CONTAINER FILLS THE WIDTH OF THE VIDEO*/
+    height: 100vh;
+    padding-top: 2vh;
+    position: relative;
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s;
+}
+
+/*THIS ANIMATION EFFECT CAUSES OVERLAY VIDEO TEXT TO MOVE UP FROM BOTTOM OF PAGE UPON PAGE LOAD*/
+@keyframes moveVideoText{
+    from {top: -100vw;} /*SETS POSITON OF VIDEO TEXT TO ABOVE THE VIEWPORT*/
+    to {top: 0vw;}
+}
+/*END OF VIDEO STYLING*/
+
+/*Slideshow section*/
+#slideshow-background {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.mySlides{
+    display: none;
+}
+
+#slideshow_container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow_images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: 100%
+}
+
+/*Previous and Next button*/
+.previous, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6 ease;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.previous:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background-color: black;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -moz-animation-duration: 1.5S;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+/*TABLE STYING COVERS STYLING OF THE COLUMNS AND ROWS WITHIN THE TABLE*/
+* { /*ASTERISK IS A UNIVERSAL SELECTOR THAT APPLIES THIS EFFECT TO ALL ELEMENTS*/
+box-sizing: border-box;
+}
+
+.column_1{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%; /*ENSURES THERE IS SPAVE BETWEEN TOP OF COLUMN AND HEADINGS*/
+    height: 450px;
+    background-color: whitesmoke;
+}
+
+/* SCREENS 576PX AND SMALLER WILL DISPLAY SCROLL BAR IF TEXT OVERFLOWS COLUMN HEIGHT*/
+@media screen and (max-width: 576px) {
+    .column_1{
+        overflow: auto;
+    }
+}
+
+.column_2{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: #4d4d4d;
+}
+
+/*THIS CLASS IS APPLIED TO COULUMNS IN FINAL ROW, OVERRIDING THE HEIGHT AND PADDING TO PROVIDE 
+MORE ROOM FOR CONTACT FORM WHILE KEEPING THE REST OF THE FORMATTING FROM COLUMN_1 OR COLUMN_2*/
+.column_tall{
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+/*THIS INSERTS SOMETHING AFTER THE CONTENT OF SELECTED ELEMENTS*/
+.row:after {
+    content: ""; /*BY LEAVING BLANK IT ALLOWS FOOTER TO BE DIPLAYED- REMOVING IT MAKES FOOTER OVERWRITE A COLUMN*/
+    display: table; /*DISPLAY PROPERTY SPECIFIES THE TYPE OF DISPLAY BEHAVIOR; THE TAVLE VALUE TELLS THE BROWSER
+    TO TREAT THE ELEMENT AS A TABLE*/
+    clear: both; /*CLEARS ANY OTHER ELEMENTS FROM FLOATING ON THE LEFT OR THE RIGHT OF AN ELEMENT*/
+}
+/*END OF TABLE STYLING*/
+
+/*CONTACT FORM STYLING*/
+.pop_up_button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: white;
+    color: black;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+
+@keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+.form-popup {
+    border: 3px solid #f0f1f0;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: gainsboro;
+    font-size: 1vw;
+}
+
+button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
+}
+
+/*Submit button*/
+.form-container .btn {
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh;
+}
+
+/*Close button*/
+.form-container .cancel{
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+.form-container .cancel {
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}

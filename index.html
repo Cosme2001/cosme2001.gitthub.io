@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width" />
+        <title>Cosme Olivarez</title>
+        <link rel="stylesheet" type="text/css" href="./stylesheet/portfolio.css">
+    </head>
+
+    <!--BODY-->
+    <body class="background">
+
+        <!--NAVBAR-->
+        <div class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#slideshow">Slideshow</a>
+            <a href="#about">About</a>
+            <a href="#github">Github</a>
+            <a onclick="openForm()" ondblclick="closeForm()"></a>
+        </div>
+
+    <!--Breaks inserted to add space between navbar and the first heading-->
+    <br>
+    <br>
+
+    <!--BACKGROUND VIDEO-->
+    <div id="home">
+        <video autoplay muted loop id="coding_video">
+            <source src="./videos/coding.mp4" type="video/mp4">
+            <!--Display message if video fails to run-->
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+            
+    <!--VIDEO TEXT-->
+    <div class="video_text">
+        <h1 class="white-text">Cosme's Portfolio</h1>
+        <strong>
+            <p class="center">
+                <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                    <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
+                    <br>field of battle and to command such unswervingly dutiful actors or troops.
+                </q>
+                <br>-Joseph Weizenbaum
+                <br>
+                <br> My name is Cosme Olivarez. Welcome to my portfolio website. On it, I will tell you about my background and and experience.
+                <br>
+                <br> Thank you for stopping by and enjoy!
+            </p>
+            </p>
+        </strong>
+    </div>
+
+    <!--Slideshow-->
+    <div id="slideshow">
+        <div id="slideshow_background">
+            <div id="slideshow_container">
+                <!--Slide 1 of 6-->
+                <div class="mySlides fade">
+                    <img class="slideshow_images" src="images/me.jpg" alt="Picture of me">
+                    <div class="text">I'm available to assist you on your project!</div>
+                </div>
+                <!--Slide 2 of 6-->
+                <div class="mySlides fade">
+                    <img class="slideshow_images" src="images/HTML_CSS_and_JavaScript.jpg" alt="Picture of me">
+                    <div class="text">I'm a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                </div>
+                <!--Slide 3 of 6-->
+                <div class="mySlides fade">
+                    <img class="slideshow_images" src="images/Python.png" alt="Picture of me">
+                    <div class="text">the popular programming language Python,</div>
+                </div>
+                <!--Slide 4 of 6-->
+                <div class="mySlides fade">
+                    <img class="slideshow_images" src="images/C_Sharp_and_Dot_NET.png" alt="Picture of me">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                </div>
+                <!--Slide 5 of 6-->
+                <div class="mySlides fade">
+                    <img class="slideshow_images" src="images/SQL_and_Database.jpg" alt="Picture of me">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+                <!--Slide 6 of 6-->
+                <div class="mySlides fade">
+                    <img class="slideshow_images" src="images/Square Custom Picture.png" alt="Picture of me">
+                    <div class="text"><a class="white-text" onclick="openForm()" href="#contact">Contact me now!</a>></div>
+                </div>
+                <!--Previous and Next buttons-->
+                <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br> <!--Space between slideshow images and dots-->
+
+            <!--Slideshow dots-->
+            <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+    </div>
+    <!--ABOUT SECTION-->
+    <div class="Row" id="About">
+        <!--LEFT COLUMN-->
+        <div class="column_2">
+            <img src="images/computer.jpg" alt="A computer">
+        </div>
+        <!--RIGHT COLUMN-->
+        <div class="column_1">
+            <h1>About</h1>
+            <p>
+                I am new to the technology field but am always trying to learn to one day become a penetration tester. I love working with technology in my free time.
+                <br>
+                <br>I am a current student of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Cyber Security Boot Camp, and training and gaining experience in the following web and programming languages: HTML, CSS, and Python.
+                <br>
+                <br>I am eager to learn and work with you on your project. <a href="#contact">Contact</a> me below!
+            </p>
+        </div>
+    </div>
+
+    <!--GITHUB SECTION-->
+    <div class="row" id="github">
+        <!--LEFT COLUMN-->
+        <div class="column_1">
+            <h1>GitHub</h1>
+            <p>
+                You can view my coding projects on my GitHub profile here:
+                <br>
+                <p class="center"><a href="https://github.com/Cosme2001" target="_blank">Cosme's GitHub</a></p>
+            </p>
+        </div>
+        <!--RIGHT COLUMN-->
+        <div class="column_2">
+            <a href="https://github.com/Cosme2001" target="_blank"><img src="images/github.jpg"></a>
+        </div>
+    </div>
+        
+    <!--CONTACT SECTION-->
+    <div id="contact">
+        <button onclick="openForm()" class="pop_up_button">CONTACT</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/xvgpokkp" method="POST" class="form-container">
+                <h1>Contact</h1>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Type your name here" name="name" required>
+                <label for="phone"><b>Phone</b></label>
+                <input type="text" placeholder="Type your phone number here" name="phone">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Type your email address here" name="email" required>
+                <label for="message"><b>Message</b></label>
+                <input type="text" placeholder="Type your message here" name="message">
+
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+            </form>
+        </div>
+
+    <!--FOOTER SECTION-->
+    <footer>
+        <p class="center">Cosme Olivarez
+        <br>
+    </p>
+</footer>
+<script src="/js/portfolio.js"></script>
+
+</body>
+</html>
+
+        
