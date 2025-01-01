@@ -36,3 +36,12 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block"; 
     dots[slideIndex - 1].className += " active"; 
 }
+
+function escapeOutput(toOutput){
+    return toOutput.replace(/\&/g, '&amp;')
+    .replace(/\</g, '&lt;')
+    .replace(/\>/g, '&gt;')
+    .replace(/\"/g, '&quot;')
+    .replace(/\'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+}
