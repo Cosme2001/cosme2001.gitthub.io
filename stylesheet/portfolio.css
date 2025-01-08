@@ -314,7 +314,7 @@ box-sizing: border-box;
     padding: 10px;
     padding-top: 3%; /*ENSURES THERE IS SPAVE BETWEEN TOP OF COLUMN AND HEADINGS*/
     height: 450px;
-    background-color: whitesmoke;
+    background-color: rgb(179, 179, 179);
 }
 
 /* SCREENS 576PX AND SMALLER WILL DISPLAY SCROLL BAR IF TEXT OVERFLOWS COLUMN HEIGHT*/
